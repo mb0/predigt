@@ -74,3 +74,8 @@ likes?
  * id
  * pub
  * sermon ref
+
+ Vim
+ ---
+
+ :setlocal spell spellfile=/home/mb0/work/predigt/spell.utf8.add spelllang=de_de
