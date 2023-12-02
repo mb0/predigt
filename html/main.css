@@ -11,12 +11,21 @@ h1 {
 	font-size: 24px;
 }
 header, section, footer {
-	margin-left: 6em;
 	max-width: 50em;
 }
 pre {
 	font-family: inherit;
+	white-space: pre-wrap;
 }
 ul li {
 	list-style: none;
+}
+@media only screen and (min-width:920px) {
+	header, section, footer {
+		margin-left: 6em;
+	}
+	pre {
+		font-family: inherit;
+		white-space: pre;
+	}
 }
