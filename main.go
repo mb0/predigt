@@ -20,6 +20,19 @@ func main() {
 		err = serve(*dir, *addr)
 	case "render":
 		err = renderAll(*dir)
+	case "scan", "adf", "duplex", "prep":
+		pre := flag.Arg(1)
+		if pre == "" {
+			log.Fatalf("no prefix, use $ predigt %s 532_kids", cmd)
+		}
+		ing := newIngester()
+		if cmd == "prep" {
+			err = ing.prep(pre)
+		} else {
+			err = ing.scanPrep(pre, cmd)
+		}
+	case "ocr":
+		err = newIngester().ocr(flag.Arg(1))
 	default:
 		log.Printf("no command render or serve")
 	}
