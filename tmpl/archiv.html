@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Predigt-Archiv</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="./main.css">
+	</head>
+<body>
+<header>
+<h1>Predigten-Archiv</h1>
+<a href="./">Zurück</a>
+</header>
+<section>
+<p>Alle {{.Count}} digitalisierten Predigten aus der Sammlung von Pastor Schnabel seit dem 14.07.1985,
+die von Frau Erika Schöneich maschinell aufgeschrieben wurden.</p>
+</section>
+<section>
+<ul>{{ range .Evs }} 
+	<li>{{.Num}}. am {{.Date.Format "02.01.2006"}}
+	{{ range $i, $v := .Vers }}{{if $i }},{{end}} <a href="./{{$v.ID}}.html">{{ $v.String }}</a>{{ end }}
+	</li>
+{{end}}</ul>
+</section>
+{{ template "footer.html" }}
+</body>
+</html>
+

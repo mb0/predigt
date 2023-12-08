@@ -11,22 +11,19 @@
 <h1>Predigten von C.G.Schnabel</h1>
 </header>
 <section>
-<p>Auf dieser Seite werden eine Reihe von Evangelisch-Lutherischen Predigten von Pastor C.G.Schnabel veröffentlicht.</p>
-<p>Das Projekt digitalisiert Predigten ab dem 06.05.1984, die von Frau Erika Schöneich
-aufgenommen und mit einer Schreibmaschiene aufgeschrieben wurden.</p>
-<p>Bis alle Predigten gescannt und übertragen wurden, finden Sie hier eine kleine Auswahl.</p>
+<p>Auf dieser Seite werden eine Reihe von Evangelisch-Lutherischen Predigten aus der Sammlung von Pastor C.G.Schnabel veröffentlicht.</p>
+<p>Das Projekt digitalisiert Predigten ab dem 14.07.1985, die von Frau Erika Schöneich
+maschienell aufgeschrieben wurden.</p>
 </section>
+{{ range .Feature }}<section>
+<p>{{ .Text }}</p>
+<ul>{{ range .Infos }}<li>
+<a href="./{{.ID}}.html">{{ .String}}</a> am {{.Date.Format "02.01.2006"}}
+</li>{{ end }}</ul>
+</section>{{ end }}
 <section>
-<ul>{{ range .}} 
-	<li>{{.ID}} - {{.Sunday}} {{.Date.Format "02.01.2006"}} <a href="./{{.ID}}.html">Predigt</a>
-	{{ if .Kids }} - <a href="./{{.ID}}_kids.html">Kinderpredigt</a>{{ end }}
-	</li>
-{{end}}</ul>
+<p><a href="./archiv.html">Archiv</a> mit {{ .Count }} Predigten</p>
 </section>
-<footer>
-Inhalte auf dieser Seite sind unter der 
-<a href="http://creativecommons.org/licenses/by-nc/4.0/deed.de" name="Creative Commons Attribution-NonCommercial 4.0">CC BY-NC 4.0</a>
-Lizens veröffentlicht.
-</footer>
+{{ template "footer.html" }}
 </body>
 </html>

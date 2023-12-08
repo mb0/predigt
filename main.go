@@ -4,6 +4,7 @@ import (
 	"flag"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 	"strings"
 )
@@ -33,6 +34,14 @@ func main() {
 		}
 	case "ocr":
 		err = newIngester().ocr(flag.Arg(1))
+	case "transform":
+		var doc Doc
+		tr := &Transformer{Width: 91, Trans: TransWord}
+		doc, err = tr.ReadBlocks(os.Stdin)
+		if err != nil {
+			log.Fatalf("%s error reading stdin:\n%v", cmd, err)
+		}
+		_, err = doc.WriteTo(os.Stdout)
 	default:
 		log.Printf("no command render or serve")
 	}
