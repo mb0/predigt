@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="de">
 	<head>
 		<meta charset="utf8">
 		<title>Predigten von C.G.Schnabel</title>
@@ -12,8 +12,6 @@
 </header>
 <section>
 <p>Auf dieser Seite werden eine Reihe von Evangelisch-Lutherischen Predigten aus der Sammlung von Pastor C.G.Schnabel veröffentlicht.</p>
-<p>Das Projekt digitalisiert Predigten ab dem 14.07.1985, die von Frau Erika Schöneich
-maschienell aufgeschrieben wurden.</p>
 </section>
 {{ range .Feature }}<section>
 <p>{{ .Text }}</p>
@@ -22,6 +20,8 @@ maschienell aufgeschrieben wurden.</p>
 </li>{{ end }}</ul>
 </section>{{ end }}
 <section>
+<p>Das Projekt digitalisiert Predigten ab dem 14.07.1985, die von Frau Erika Schöneich
+maschienell aufgeschrieben wurden.</p>
 <p><a href="./archiv.html">Archiv</a> mit {{ .Count }} Predigten</p>
 </section>
 {{ template "footer.html" }}
