@@ -1,3 +1,13 @@
 {"ignore":[],"feature":[
-	{"text":"Eine kleine Auswahl zum Advent 2023:", "ids":[5320,5321,6840]}
+	{"text":"Zum 1. Advent:", "ids":[
+		5320,
+		5321
+	]},
+	{"text":"Zum 2. Advent:", "ids":[
+		6840
+	]},
+	{"text":"Zum 3. Advent:", "ids":[
+		5660,
+		5661
+	]}
 ]}

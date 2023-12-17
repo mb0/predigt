@@ -107,7 +107,7 @@ func (ing *Ingester) ocrFiles(files ...string) error {
 	name := ""
 	for _, path := range files {
 		if name == "" {
-			name = splitLast(filepath.Base(path), "-.")
+			name = splitFirst(filepath.Base(path), "-.")
 		}
 		buf.WriteString(path)
 		buf.WriteByte('\n')

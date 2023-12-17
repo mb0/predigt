@@ -16,7 +16,7 @@
 {{ range .Feature }}<section>
 <p>{{ .Text }}</p>
 <ul>{{ range .Infos }}<li>
-<a href="./{{.ID}}.html">{{ .String}}</a> am {{.Date.Format "02.01.2006"}}
+<a href="./{{.ID}}.html">{{ .String}}</a> vom {{.Date.Format "02.01.2006"}}
 </li>{{ end }}</ul>
 </section>{{ end }}
 <section>
